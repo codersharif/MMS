@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/codersharif/Meal_Management_System.git/main/mms.png" width="400"></p>
+<p align="center"><img src="https://github.com/codersharif/Meal_Management_System/blob/main/mms.png" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
