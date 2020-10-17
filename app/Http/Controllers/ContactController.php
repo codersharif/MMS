@@ -1,6 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+/*
+  |App version 1.0
+  |@author shariful islam khan
+  
+ */
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;

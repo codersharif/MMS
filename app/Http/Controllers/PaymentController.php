@@ -1,4 +1,9 @@
 <?php
+/*
+  |App version 1.0
+  |@author shariful islam khan
+  
+ */
 
 namespace App\Http\Controllers;
 

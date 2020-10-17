@@ -10,6 +10,11 @@
   | contains the "web" middleware group. Now create something great!
   |
  */
+/*
+  |App version 1.0
+  |@author shariful islam khan
+  
+ */
 
 Route::get('/', function () {
     return view('welcome');
