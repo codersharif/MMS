@@ -7,8 +7,8 @@
             <div class="card">
                 <div class="card-header">
                     <span>User List</span>
-                    <a href="{{route('cost')}}" class="btn btn-danger px-5">Add Mil Cost</a>
-                    <a href="{{route('savings')}}" class="btn btn-info px-5">Add Mil Savings</a>
+                    <a href="{{route('cost')}}" class="btn btn-danger px-5">Add Meal Cost</a>
+                    <a href="{{route('savings')}}" class="btn btn-info px-5">Add Meal Savings</a>
                     <div class="mt-2">
                         <span class="btn btn-warning bold">
                             Total Saving : &#2547; {{$totalSavings['savings']??0}}
@@ -51,7 +51,7 @@
                                     <th scope="col">Lunch</th>
                                     <th scope="col">Diner</th>
                                     <th scope="col">Total Mil</th>
-                                    <th scope="col">Mil Rate</th>
+                                    <th scope="col">Meal Rate</th>
                                     <th scope="col">Savings</th>
                                     <th scope="col">Balance</th>
                                     <th scope="col">Action</th>
