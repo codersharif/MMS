@@ -10,6 +10,8 @@
             <word>enderror</word>
             <word>foreach</word>
             <word>gose</word>
+            <word>td</word>
+            <word>thead</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

@@ -16,11 +16,35 @@
   
  */
 
+//Route::get('/', function () {
+//    if (Auth::check()) {
+//        return redirect('dashboard');
+//    } else {
+//        return view('auth.login');
+//    }
+//});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
+
+Route::group(['middleware' => 'auth'], function () {
+    
+Route::get('/users','UsersController@index');
+Route::get('/users/create','UsersController@create');
+Route::post('/users/store','UsersController@store');
+Route::get('/users/{id}/edit','UsersController@edit');
+Route::put('/users/update/{id}','UsersController@update');
+Route::delete('/users/{id}','UsersController@destroy');
+
+//setRecordPerPage
+Route::post('setRecordPerPage', 'UsersController@setRecordPerPage');
+    
+    
+});
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -42,3 +66,5 @@ Route::post('/saving/save', 'MilchartController@savingsSave')->middleware('auth'
 Route::post('/mil/count', 'MilchartController@milcount')->middleware('auth');
 
 Route::post('/mil/email/send', 'ContactController@emailSent')->middleware('auth')->name('email.send');
+
+
