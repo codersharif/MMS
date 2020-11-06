@@ -40,7 +40,7 @@ class LoginController extends Controller
     }
     
     
-    public function authenticated(Request $request) {
-        $request->session()->put('paginatorCount','Pagination Count');
-    }
+    // public function authenticated(Request $request) {
+    //     $request->session()->put('paginatorCount','Pagination Count');
+    // }
 }

@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <span>User List</span>
+                    <a href="{{URL::to('users')}}" class="btn bg-secondary text-white px-5">User List</a>
                     <a href="{{route('cost')}}" class="btn btn-danger px-5">Add Meal Cost</a>
                     <a href="{{route('savings')}}" class="btn btn-info px-5">Add Meal Savings</a>
                     <div class="mt-2">
@@ -82,7 +82,12 @@
                                     <td class="bold" width="100">&#2547; {{$userTotalMilRate}}</td>
                                     <td class="bold" width="100">&#2547; {{!empty($userAmount['savings'][$user->id])?$userAmount['savings'][$user->id]:0}}</td>
                                     <td class="bold" width="100">
-                                        &#2547; {{$userAmt - $userTotalMilRate}}
+                                       <?php
+                                       $balance=$userAmt - $userTotalMilRate;
+                                       $balance=number_format($balance,'2');
+                                       ?>
+                                        &#2547; {{ $balance}}
+
                                     </td>
                                     <td>
                                         <div class="row">
