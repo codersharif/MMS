@@ -56,7 +56,7 @@ class ContactController extends Controller {
         Mail::to($users->email)
                 ->send(new ContactMail(request('user_id')));
 
-        return redirect('/home')->with('status', 'mail send succesfully');
+        return redirect('/meal')->with('success', 'mail send succesfully');
     }
 
 

@@ -39,7 +39,7 @@ class ContactMail extends Mailable {
 //                ->subject('More information About '. $this->topic);
 
         return $this->view('emails.contact-me')
-                        ->subject('Your mill rate satus')
+                        ->subject('Your Meal rate satus')
                         ->with([
                             'user_id' => $this->user,
         ]);

@@ -25,46 +25,56 @@
 //});
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     
-Route::get('/users','UsersController@index');
-Route::get('/users/create','UsersController@create');
-Route::post('/users/store','UsersController@store');
-Route::get('/users/{id}/edit','UsersController@edit');
-Route::put('/users/update/{id}','UsersController@update');
-Route::delete('/users/{id}','UsersController@destroy');
+Route::get('/users','UserController@index');
+Route::get('/users/create','UserController@create');
+Route::post('/users/store','UserController@store');
+Route::get('/users/{id}/edit','UserController@edit');
+Route::put('/users/update/{id}','UserController@update');
+Route::delete('/users/{id}','UserController@destroy');
 
 //setRecordPerPage
 Route::post('setRecordPerPage', 'UsersController@setRecordPerPage');
+
+
+//home
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+//mail
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact/send', 'ContactController@send')->name('contact.send');
+
+//payment
+Route::get('/payment', 'PaymentController@show')->middleware('auth');
+Route::post('/payment', 'PaymentController@store')->middleware('auth')->name('payment.send');
+Route::post('/payment/action', 'PaymentController@eventAction')->middleware('auth')->name('payment.eventAction');
+
+//Notification
+Route::get('/notification', 'userNotificationsController@show')->middleware('auth');
+
+//Meal Route 
+Route::get('/meal', 'MealController@index')->name('index');
+Route::get('/cost', 'MealController@cost')->name('cost');
+Route::post('/cost/save', 'MealController@costSave');
+
+Route::get('/savings', 'MealController@savings')->name('savings');
+Route::post('/saving/save', 'MealController@savingsSave');
+Route::post('/count', 'MealController@countStore');
+
+
+//Email Route
+Route::post('/email/send', 'ContactController@emailSent')->name('email.send');
     
     
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/contact', 'ContactController@show');
-Route::post('/contact/send', 'ContactController@send')->name('contact.send');
-
-Route::get('/payment', 'PaymentController@show')->middleware('auth');
-Route::post('/payment', 'PaymentController@store')->middleware('auth')->name('payment.send');
-Route::post('/payment/action', 'PaymentController@eventAction')->middleware('auth')->name('payment.eventAction');
-
-Route::get('/notification', 'userNotificationsController@show')->middleware('auth');
-
-//mil chart route 
-Route::get('/mil/cost', 'MilchartController@cost')->middleware('auth')->name('cost');
-Route::post('/cost/save', 'MilchartController@costSave')->middleware('auth');
-
-Route::get('/mil/savings', 'MilchartController@savings')->middleware('auth')->name('savings');
-Route::post('/saving/save', 'MilchartController@savingsSave')->middleware('auth');
-Route::post('/mil/count', 'MilchartController@milcount')->middleware('auth');
-
-Route::post('/mil/email/send', 'ContactController@emailSent')->middleware('auth')->name('email.send');
 
 

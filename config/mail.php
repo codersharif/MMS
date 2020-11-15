@@ -88,7 +88,7 @@ return [
   //  'password' => env('MAIL_PASSWORD'),
 
     'username'=>'milmanagement34@gmail.com',
-    'password'=>'12345678',
+    'password'=>'8888',
     /*
     |--------------------------------------------------------------------------
     | Sendmail System Path
