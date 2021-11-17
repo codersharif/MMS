@@ -51,7 +51,8 @@ class UserController extends Controller {
         $rules = [
             'name' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required|complex_password:,' . $request->password,
+            // 'password' => 'required|complex_password:,' . $request->password,
+            'password' => 'required',
             'conf_password' => 'required|same:password'
         ];
 
@@ -69,6 +70,7 @@ class UserController extends Controller {
 
         $target = new User;
         $target->name = $request->name;
+        $target->group_id = '0';
         $target->email = $request->email;
         $target->password = $request->password;
 
@@ -156,7 +158,7 @@ class UserController extends Controller {
         if (empty($target)) {
             Session::flash('error','Invalid Data ID');
         }
-        
+
         if ($target->delete()) {
             Session::flash('error','Users Delete Succesfully');
         } else {

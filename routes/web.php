@@ -63,6 +63,13 @@ Route::get('/meal', 'MealController@index')->name('index');
 Route::get('/cost', 'MealController@cost')->name('cost');
 Route::post('/cost/save', 'MealController@costSave');
 
+//Saving list Route 
+Route::get('/savinglist', 'SavingController@index')->name('index');
+
+//Cost list Route 
+Route::get('/costlist', 'CostController@index')->name('index');
+
+
 Route::get('/savings', 'MealController@savings')->name('savings');
 Route::post('/saving/save', 'MealController@savingsSave');
 Route::post('/count', 'MealController@countStore');

@@ -54,6 +54,20 @@
                                     <p> Meal</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{URL::to('savinglist')}}" class="nav-link {{Helper::currentPath('savinglist')}}">
+                                    <i class="fas fa-rocket"></i>
+                                    
+                                    <p> Saving List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{URL::to('costlist')}}" class="nav-link {{Helper::currentPath('costlist')}}">
+                                    <i class="fas fa-rocket"></i>
+                                    
+                                    <p> Cost List</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">

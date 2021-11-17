@@ -22,7 +22,7 @@
                             if ($totalMil != 0) {
                                 $milRate = number_format($totalCost->cost / $totalMil, '2');
                             } else {
-                                echo '';
+                                echo 0;
                             }
                             ?>
                             Total Cost: &#2547; {{$totalCost->cost}}</span> -
@@ -82,7 +82,10 @@
                                     $guest = !empty($userMilTypeArr[$user->id][3]) ? $userMilTypeArr[$user->id][3] : 0;
                                     $extra = !empty($userMilTypeArr[$user->id][4]) ? $userMilTypeArr[$user->id][4] : 0;
                                     $userTotalMil = $lunch + $diner + $guest + $extra;
-                                    $userTotalMilRate = $userTotalMil * $milRate ?? 0;
+
+
+                                    $userTotalMilRate = (float)(!empty($milRate)?$milRate:0) * (float)$userTotalMil;
+
                                     $userAmt = !empty($userAmount['savings'][$user->id]) ? $userAmount['savings'][$user->id] : 0;
                                     ?>
                                     {{$userTotalMil}} 
