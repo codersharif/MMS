@@ -84,11 +84,11 @@ return [
     |
     */
 
-  //  'username' => env('MAIL_USERNAME'),
-  //  'password' => env('MAIL_PASSWORD'),
+   'username' => env('MAIL_USERNAME'),
+   'password' => env('MAIL_PASSWORD'),
 
-    'username'=>'milmanagement34@gmail.com',
-    'password'=>'meal01537498966',
+   // 'username'=>'milmanagement34@gmail.com',
+   // 'password'=>'',
     /*
     |--------------------------------------------------------------------------
     | Sendmail System Path
